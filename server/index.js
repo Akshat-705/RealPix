@@ -78,7 +78,7 @@ app.post('/api/generate-image', async (req, res) => {
     }
     
     // Check if OpenAI API key is configured
-    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 'your_openai_api_key_here') {
+    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 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) {
       // If no API key, return a mock response with a sample image
       const sampleImages = [
         'https://images.unsplash.com/photo-1679678691006-0ad24fecb769?q=80&w=2069&auto=format&fit=crop',
