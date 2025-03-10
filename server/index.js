@@ -113,7 +113,7 @@ app.post('/api/generate-image', async (req, res) => {
     
   } catch (error) {
     console.error('Error generating image:', error);
-    res.status(500).json({
+    res.status(400).json({
       success: false,
       message: 'Failed to generate image',
       error: error.message
@@ -124,7 +124,7 @@ app.post('/api/generate-image', async (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({
+  res.status(400).json({
     success: false,
     message: 'Internal server error',
     error: isProduction ? 'An unexpected error occurred' : err.message
